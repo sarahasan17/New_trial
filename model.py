@@ -34,7 +34,8 @@ def preprocess(data):
 def training(total_words,max_sequence_len,predictors,label):
 	model = Sequential()
 
-	model.add(Embedding(input_dim=total_words + 1, output_dim=100))  # Remove input_length here
+	model.add(Embedding(input_dim=total_words + 1, output_dim=1000))
+  # Remove input_length here
 	#model.add(Embedding(total_words+1, 100, input_length=max_sequence_len-1))
 	model.add(Bidirectional(LSTM(150, return_sequences=True)))
 	model.add(Dropout(0.2))
