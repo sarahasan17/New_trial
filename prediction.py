@@ -11,7 +11,7 @@ from model import tokenizer, max_sequence_len
 import numpy as np
 def predict(data):
     seed_text = pd.DataFrame(data)[0]
-    model = joblib.load('model2.sav')
+    model = joblib.load('model.sav')
     next_words = 25
     for _ in range(next_words):
         token_list = tokenizer.texts_to_sequences([seed_text])[0]
